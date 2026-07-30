@@ -1,0 +1,48 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://tests/world_overview.gd" id="1_overview"]
+[ext_resource type="Script" path="res://scripts/world_generator.gd" id="2_generator"]
+[ext_resource type="Script" path="res://scripts/movement_lab.gd" id="3_movement"]
+[ext_resource type="Script" path="res://scripts/weather_system.gd" id="4_weather"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_overview"]
+sky_top_color = Color(0.12, 0.25, 0.37, 1)
+sky_horizon_color = Color(0.63, 0.73, 0.72, 1)
+ground_bottom_color = Color(0.06, 0.08, 0.08, 1)
+ground_horizon_color = Color(0.42, 0.5, 0.48, 1)
+
+[sub_resource type="Sky" id="Sky_overview"]
+sky_material = SubResource("ProceduralSkyMaterial_overview")
+
+[sub_resource type="Environment" id="Environment_overview"]
+background_mode = 2
+sky = SubResource("Sky_overview")
+ambient_light_source = 3
+ambient_light_energy = 0.7
+tonemap_mode = 2
+
+[node name="WorldOverview" type="Node3D"]
+script = ExtResource("1_overview")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_overview")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-52, -28, 0)
+light_color = Color(1, 0.93, 0.8, 1)
+light_energy = 1.3
+shadow_enabled = true
+
+[node name="WeatherSystem" type="Node3D" parent="."]
+script = ExtResource("4_weather")
+
+[node name="WorldGenerator" type="Node3D" parent="."]
+script = ExtResource("2_generator")
+generate_on_ready = false
+
+[node name="MovementLab" type="Node3D" parent="."]
+script = ExtResource("3_movement")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+current = true
+far = 2200.0

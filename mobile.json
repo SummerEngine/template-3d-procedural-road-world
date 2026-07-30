@@ -1,0 +1,7 @@
+{
+  "id": "procedural-road-world",
+  "name": "Procedural Road World",
+  "package_id": "com.summerlab.proceduralroadworld",
+  "version_code": 5,
+  "orientation": "sensor_landscape"
+}

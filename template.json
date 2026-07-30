@@ -1,0 +1,38 @@
+{
+  "id": "3d-procedural-road-world",
+  "version": "1.0.0",
+  "name": "Procedural Road World",
+  "engineMinVersion": "0.5.58",
+  "entryScene": "res://main.tscn",
+  "dimension": "3D",
+  "mechanics": [
+    "procedural-terrain",
+    "seeded-world-generation",
+    "terrain-aware-roads",
+    "first-person-controller",
+    "third-person-controller",
+    "physics-car",
+    "enter-exit-vehicle",
+    "weather",
+    "mobile-controls"
+  ],
+  "genres": [
+    "open-world",
+    "driving",
+    "exploration",
+    "sandbox"
+  ],
+  "agentBrief": "A complete GDScript-only open-world starter. ENTRY: res://main.tscn. scripts/world_generator.gd creates the finite seeded terrain, chunks, through-road and T-junction network, four level districts, enterable house shells, parkour plots, vegetation and landmark mountain. scripts/movement_player.gd owns the on-foot CharacterBody3D, first/third-person cameras, sprint, jump and mantle. scripts/arcade_car.gd owns the four-wheel RigidBody3D vehicle, suspension, drive profiles, recovery and parking behavior. scripts/movement_lab.gd wires startup generation settings, player/car spawning, E enter/exit, V cameras, reset and pause. scripts/weather_system.gd cycles clear, overcast, rain and fog. scripts/mobile_controls.gd owns the multi-touch on-foot and driving layouts. The visuals intentionally use Godot primitives so the project is safe to redistribute and easy to reskin. Customize the world constants, vehicle profiles and one focused gameplay loop; do not replace the complete generator/controller spine before verifying the requested game.",
+  "shipsProjectGodot": true,
+  "userFacing": {
+    "tagline": "Generate a road-connected open world, explore on foot, and enter a physics car.",
+    "highlights": [
+      "Seeded procedural terrain with independently rendered and collidable chunks",
+      "Terrain-aware road network with T-junctions and level buildable districts",
+      "First- and third-person movement with sprint, jump and mantle",
+      "Enterable four-wheel physics car with editable handling profiles",
+      "Weather states, day-ready lighting, desktop controls and multi-touch mobile UI",
+      "Primitive-only redistributable visuals designed for rapid reskinning"
+    ]
+  }
+}

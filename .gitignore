@@ -1,0 +1,25 @@
+# Summer Engine defaults
+.godot/
+*.import
+*.translation
+.DS_Store
+Thumbs.db
+
+# AI tooling
+.claude/
+.specstory/
+
+# Summer Engine local-only state (SummerGit, caches, locks)
+.summer/local/
+
+# Dependencies & build output
+node_modules/
+.next/
+builds/
+*.apk
+
+# Local editor backups
+*.bak
+
+# Environment
+.env*

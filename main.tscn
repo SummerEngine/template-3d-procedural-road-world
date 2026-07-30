@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://b5bxt5piikcc4"]
+
+[ext_resource type="Script" uid="uid://bdqyf4hvq1rmp" path="res://scripts/world_generator.gd" id="1_world"]
+[ext_resource type="Script" uid="uid://tu627somqygy" path="res://scripts/free_fly_camera.gd" id="2_camera"]
+[ext_resource type="Script" uid="uid://do346mrjxqt2h" path="res://scripts/world_ui.gd" id="3_ui"]
+[ext_resource type="Script" uid="uid://b7fhpprgxh44n" path="res://scripts/movement_lab.gd" id="4_movement"]
+[ext_resource type="Script" uid="uid://s76gysw7vr7d" path="res://scripts/weather_system.gd" id="5_weather"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_world"]
+sky_top_color = Color(0.12, 0.25, 0.37, 1)
+sky_horizon_color = Color(0.63, 0.73, 0.72, 1)
+ground_bottom_color = Color(0.06, 0.08, 0.08, 1)
+ground_horizon_color = Color(0.42, 0.5, 0.48, 1)
+sun_angle_max = 18.0
+sun_curve = 0.09
+
+[sub_resource type="Sky" id="Sky_world"]
+sky_material = SubResource("ProceduralSkyMaterial_world")
+
+[sub_resource type="Environment" id="Environment_world"]
+background_mode = 2
+sky = SubResource("Sky_world")
+ambient_light_source = 3
+ambient_light_color = Color(0.62, 0.7, 0.74, 1)
+ambient_light_energy = 0.62
+reflected_light_source = 2
+tonemap_mode = 2
+fog_light_color = Color(0.62, 0.7, 0.71, 1)
+fog_light_energy = 0.7
+fog_density = 0.0009
+fog_height = -25.0
+fog_height_density = 0.003
+
+[node name="World" type="Node3D" unique_id=1125989305]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=234126338]
+environment = SubResource("Environment_world")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1025404830]
+transform = Transform3D(0.88294756, 0.36994863, -0.2890356, 0, 0.6156615, 0.7880107, 0.46947157, -0.6957722, 0.5435968, 0, 0, 0)
+light_color = Color(1, 0.93, 0.8, 1)
+light_energy = 1.25
+shadow_enabled = true
+directional_shadow_max_distance = 520.0
+
+[node name="SkyFill" type="DirectionalLight3D" parent="." unique_id=2126683894]
+transform = Transform3D(-0.7880108, -0.37903905, 0.48514786, 0, 0.7880108, 0.6156615, -0.61566144, 0.4851479, -0.620961, 0, 0, 0)
+light_color = Color(0.55, 0.72, 0.86, 1)
+light_energy = 0.52
+
+[node name="WeatherSystem" type="Node3D" parent="." unique_id=727825642]
+script = ExtResource("5_weather")
+
+[node name="WorldGenerator" type="Node3D" parent="." unique_id=1107887874]
+script = ExtResource("1_world")
+generate_on_ready = false
+
+[node name="FreeFlyCamera" type="Camera3D" parent="." unique_id=1764801530]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 330, 285)
+far = 2200.0
+script = ExtResource("2_camera")
+
+[node name="MovementLab" type="Node3D" parent="." unique_id=1381625297]
+script = ExtResource("4_movement")
+
+[node name="WorldUI" type="CanvasLayer" parent="." unique_id=785724050]
+script = ExtResource("3_ui")
