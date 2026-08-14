@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://b5bxt5piikcc4"]
 
-[ext_resource type="Script" uid="uid://bdqyf4hvq1rmp" path="res://scripts/world_generator.gd" id="1_world"]
-[ext_resource type="Script" uid="uid://tu627somqygy" path="res://scripts/free_fly_camera.gd" id="2_camera"]
-[ext_resource type="Script" uid="uid://do346mrjxqt2h" path="res://scripts/world_ui.gd" id="3_ui"]
-[ext_resource type="Script" uid="uid://b7fhpprgxh44n" path="res://scripts/movement_lab.gd" id="4_movement"]
-[ext_resource type="Script" uid="uid://s76gysw7vr7d" path="res://scripts/weather_system.gd" id="5_weather"]
+[ext_resource type="Script" uid="uid://bf08fnni70pr2" path="res://scripts/world_generator.gd" id="1_world"]
+[ext_resource type="Script" uid="uid://c4x01cvl2dwce" path="res://scripts/free_fly_camera.gd" id="2_camera"]
+[ext_resource type="Script" uid="uid://1vr0nasqte1y" path="res://scripts/world_ui.gd" id="3_ui"]
+[ext_resource type="Script" uid="uid://bd73u2bvmhf6c" path="res://scripts/movement_lab.gd" id="4_movement"]
+[ext_resource type="Script" uid="uid://qmm6e22yh3iy" path="res://scripts/weather_system.gd" id="5_weather"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_world"]
 sky_top_color = Color(0.12, 0.25, 0.37, 1)
